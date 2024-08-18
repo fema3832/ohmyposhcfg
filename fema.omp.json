@@ -38,7 +38,7 @@
             "branch_icon": ""
           },
           "style": "plain",
-          "template": "[git({{ .HEAD }})]",s
+          "template": "[{{ .HEAD })]",
           "type": "git"
         },
         {
