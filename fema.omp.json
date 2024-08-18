@@ -37,12 +37,6 @@
           "style": "powerline",
           "type": "git"
         },
-		{
-          "foreground": "#81adff",
-          "style": "plain",
-          "template": "{{ .HostName }}",
-          "type": "session"
-        },
         {
           "foreground": "#028513",
 		  "style": "plain",
