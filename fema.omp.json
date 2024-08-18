@@ -34,7 +34,7 @@
         {
           "foreground": "#cbff78",
           "style": "plain",
-          "template": "$ ",
+          "template": " $ ",
           "type": "session"
         }
       ],
