@@ -22,7 +22,7 @@
           "template": "[{{ .Path }}]",
           "type": "path"
         },
-        {
+       {
           "background": "#2e9599",
           "background_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}#f36943{{ end }}",
@@ -30,10 +30,17 @@
             "{{ if gt .Ahead 0 }}#35b5ff{{ end }}",
             "{{ if gt .Behind 0 }}#f89cfa{{ end }}"
           ],
-          "foreground": "#028513",
-		  "style": "plain",
+          "foreground": "#193549",
+          "foreground_templates": [
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ffffff{{ end }}"
+          ],
           "template": "[{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}]",
-          "type": "session"
+          "properties": {
+            "branch_max_length": 25,
+            "fetch_status": true
+          },
+          "style": "plain",
+          "type": "git"
         },
         {
           "foreground": "#cbff78",
