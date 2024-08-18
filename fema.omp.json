@@ -22,24 +22,13 @@
           "template": "[{{ .Path }}]",
           "type": "path"
         },
-		{
-          "background": "#2e9599",
-          "background_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#f36943{{ end }}",
-            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#a8216b{{ end }}",
-            "{{ if gt .Ahead 0 }}#35b5ff{{ end }}",
-            "{{ if gt .Behind 0 }}#f89cfa{{ end }}"
-          ],
-          "foreground": "#193549",
-          "foreground_templates": [
-            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ffffff{{ end }}"
-          ],
-          "template": "[{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}]",
+        {
+          "foreground": "#C678DD",
           "properties": {
-            "branch_max_length": 25,
             "fetch_status": true
           },
-          "style": "powerline",
+          "style": "plain",
+          "template": "<#ffffff>on</> {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
           "type": "git"
         },
         {
