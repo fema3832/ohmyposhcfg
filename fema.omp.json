@@ -32,8 +32,8 @@
           ],
           "foreground": "#028513",
 		  "style": "plain",
-          "template": "[{{ .HEAD }}]",
-          "type": "path"
+          "template": "[{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}]",
+          "type": "session"
         },
         {
           "foreground": "#cbff78",
