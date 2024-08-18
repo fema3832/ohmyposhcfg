@@ -16,12 +16,36 @@
           "template": "{{ .HostName }}",
           "type": "session"
         },
+       {
+          "background": "#2e9599",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#f36943{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#a8216b{{ end }}",
+            "{{ if gt .Ahead 0 }}#35b5ff{{ end }}",
+            "{{ if gt .Behind 0 }}#f89cfa{{ end }}"
+          ],
+          "foreground": "#193549",
+          "foreground_templates": [
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ffffff{{ end }}"
+          ],
+          "powerline_symbol": "",
+          "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }} ",
+          "properties": {
+            "branch_max_length": 25,
+            "fetch_status": true
+          },
+          "style": "powerline",
+          "type": "git"
+        },
+		{
+          "foreground": "#81adff",
+          "style": "plain",
+          "template": "{{ .HostName }}",
+          "type": "session"
+        },
         {
           "foreground": "#028513",
-          "properties": {
-            "style": "full"
-          },
-          "style": "plain",
+		  "style": "plain",
           "template": "[{{ .Path }}]",
           "type": "path"
         },
