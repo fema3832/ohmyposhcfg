@@ -29,8 +29,8 @@
           "properties": {
             "branch_icon": ""
           },
-          "style": "diamond",
-          "template": " git({{ .HEAD }}) ",
+          "style": "plain",
+          "template": "[git({{ .HEAD }})]",
           "trailing_diamond": "\ue0c6",
           "type": "git"
         },
