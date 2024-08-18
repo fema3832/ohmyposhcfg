@@ -16,7 +16,13 @@
           "template": "{{ .HostName }}",
           "type": "session"
         },
-       {
+        {
+          "foreground": "#028513",
+		  "style": "plain",
+          "template": "[{{ .Path }}]",
+          "type": "path"
+        },
+		{
           "background": "#2e9599",
           "background_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}#f36943{{ end }}",
@@ -28,20 +34,13 @@
           "foreground_templates": [
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ffffff{{ end }}"
           ],
-          "powerline_symbol": "",
-          "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }} ",
+          "template": "[{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}]",
           "properties": {
             "branch_max_length": 25,
             "fetch_status": true
           },
           "style": "powerline",
           "type": "git"
-        },
-        {
-          "foreground": "#028513",
-		  "style": "plain",
-          "template": "[{{ .Path }}]",
-          "type": "path"
         },
         {
           "foreground": "#cbff78",
