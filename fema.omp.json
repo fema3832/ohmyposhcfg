@@ -32,7 +32,7 @@
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ff4500{{ end }}",
             "{{ if gt .Ahead 0 }}#896AC4{{ end }}",
             "{{ if gt .Behind 0 }}#896AC4{{ end }}"
-          ],s
+          ],
           "foreground": "#193549",
 		  "style": "powerline",
           "template": "[{{ .HEAD }}]",
