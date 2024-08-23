@@ -26,13 +26,24 @@
           }
         },
 		{
+		  "background": "#fffb38",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#FF9248{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ff4500{{ end }}",
+            "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
+            "{{ if gt .Behind 0 }}#B388FF{{ end }}"
+          ],
+          "foreground": "#193549",
 		  "style": "powerline",
           "template": "[{{ .HEAD }}]",
           "type": "git",
 		  "properties": {
-			"branch_icon": ""
-          },
-		  "foreground": "#A50000",
+			"branch_icon": "",
+			"branch_max_length": 25,
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": false
+          }
         },
         {
           "foreground": "#cbff78",
