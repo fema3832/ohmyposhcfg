@@ -1,0 +1,3 @@
+clink="C:\Program Files (x86)\clink\clink_x64.exe" $*
+history="C:\Program Files (x86)\clink\clink_x64.exe" history $*
+ls=dir

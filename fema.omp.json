@@ -24,6 +24,12 @@
         },
 		{
           "background": "#2e9599",
+		  "style": "plain",
+          "template": "{{ .HEAD }}",
+          "type": "git",
+		  "properties": {
+            "branch_icon": ""
+          },
           "background_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}#f36943{{ end }}",
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#a8216b{{ end }}",
@@ -33,13 +39,7 @@
           "foreground": "#193549",
           "foreground_templates": [
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ffffff{{ end }}"
-          ],
-          "properties": {
-            "branch_icon": ""
-          },
-          "style": "powerline",
-          "template": "[{{ .HEAD })]",
-          "type": "git"
+          ]
         },
         {
           "foreground": "#cbff78",
